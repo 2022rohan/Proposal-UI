@@ -95,181 +95,211 @@ export default function ValentineProposal() {
       </div>
 
       {/* Main content */}
-      <div className="relative z-10 flex items-center justify-center min-h-screen p-8">
-        {!accepted ? (
-          <div className="relative">
-            {/* Decorative backdrop blur card */}
-            <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl rounded-[3rem] transform rotate-1 scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-pink-100/40 backdrop-blur-2xl rounded-[3rem] transform -rotate-1" />
-            
-            {/* Main card */}
-            <div className="relative bg-white/70 backdrop-blur-3xl rounded-[3rem] shadow-2xl border border-white/60 p-16 max-w-3xl">
-              {/* Decorative corner flourishes */}
-              <div className="absolute top-8 left-8 w-16 h-16">
-                <svg viewBox="0 0 100 100" className="text-rose-400 opacity-40">
-                  <path d="M0,50 Q25,25 50,50 T100,50" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M50,0 Q25,25 50,50 T50,100" stroke="currentColor" strokeWidth="2" fill="none"/>
-                </svg>
-              </div>
-              <div className="absolute top-8 right-8 w-16 h-16 transform rotate-90">
-                <svg viewBox="0 0 100 100" className="text-rose-400 opacity-40">
-                  <path d="M0,50 Q25,25 50,50 T100,50" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M50,0 Q25,25 50,50 T50,100" stroke="currentColor" strokeWidth="2" fill="none"/>
-                </svg>
-              </div>
-              <div className="absolute bottom-8 left-8 w-16 h-16 transform -rotate-90">
-                <svg viewBox="0 0 100 100" className="text-rose-400 opacity-40">
-                  <path d="M0,50 Q25,25 50,50 T100,50" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M50,0 Q25,25 50,50 T50,100" stroke="currentColor" strokeWidth="2" fill="none"/>
-                </svg>
-              </div>
-              <div className="absolute bottom-8 right-8 w-16 h-16 transform rotate-180">
-                <svg viewBox="0 0 100 100" className="text-rose-400 opacity-40">
-                  <path d="M0,50 Q25,25 50,50 T100,50" stroke="currentColor" strokeWidth="2" fill="none"/>
-                  <path d="M50,0 Q25,25 50,50 T50,100" stroke="currentColor" strokeWidth="2" fill="none"/>
-                </svg>
-              </div>
+      <div className="relative z-10 flex items-center justify-center min-h-screen px-4 py-10 sm:p-8">
+  {!accepted ? (
+    <div className="relative w-full flex justify-center">
+      
+      {/* Decorative backdrop blur card */}
+      <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl rounded-[2rem] sm:rounded-[3rem] rotate-1 scale-105" />
+      <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-pink-100/40 backdrop-blur-2xl rounded-[2rem] sm:rounded-[3rem] -rotate-1" />
 
-              {/* Heart SVG centerpiece */}
-              <div className="flex justify-center mb-12">
-                <svg width="120" height="120" viewBox="0 0 24 24" className="animate-pulse-gentle">
-                  <defs>
-                    <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#f43f5e" />
-                      <stop offset="50%" stopColor="#fb7185" />
-                      <stop offset="100%" stopColor="#f43f5e" />
-                    </linearGradient>
-                  </defs>
-                  <path 
-                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
-                    fill="url(#heartGradient)"
-                    className="drop-shadow-lg"
-                  />
-                </svg>
-              </div>
+      {/* Main card */}
+      <div className="relative bg-white/70 backdrop-blur-3xl rounded-[2rem] sm:rounded-[3rem] shadow-2xl border border-white/60 
+                      w-full max-w-md sm:max-w-2xl md:max-w-3xl
+                      p-6 sm:p-10 md:p-16">
 
-              {/* Typography */}
-              <div className="text-center space-y-8 mb-16">
-                <h1 className="font-serif text-6xl md:text-7xl font-light text-gray-800 tracking-wide leading-tight">
-                  A Question for You
-                </h1>
-                
-                <div className="w-24 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent mx-auto" />
-                
-                <p className="font-serif text-5xl md:text-6xl font-normal text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 leading-tight">
-                 {name || "Darling"} , Will You Be My Valentine?
-                </p>
-              </div>
+        {/* Heart */}
+        <div className="flex justify-center mb-8 sm:mb-12">
+          <svg
+            width="80"
+            height="80"
+            className="sm:w-[100px] sm:h-[100px] md:w-[120px] md:h-[120px] animate-pulse-gentle"
+            viewBox="0 0 24 24"
+          >
+            <defs>
+              <linearGradient id="heartGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#f43f5e" />
+                <stop offset="50%" stopColor="#fb7185" />
+                <stop offset="100%" stopColor="#f43f5e" />
+              </linearGradient>
+            </defs>
+            <path
+              d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z"
+              fill="url(#heartGradient)"
+            />
+          </svg>
+        </div>
 
-              {/* Buttons */}
-             <div className="relative min-h-[140px] flex items-center justify-center gap-16">
+        {/* Typography */}
+        <div className="text-center space-y-6 sm:space-y-8 mb-10 sm:mb-16">
+          <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl font-light text-gray-800 leading-tight">
+            A Question for You
+          </h1>
 
-                <button
-                  onClick={handleYes}
-                  className="group relative px-16 py-6 rounded-full font-medium text-xl text-white overflow-hidden transition-all duration-500 hover:scale-105 hover:shadow-2xl hover:shadow-rose-500/50"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 bg-size-200 animate-gradient-shift" />
-                  <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                    <div className="absolute inset-0 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 blur-xl" />
-                  </div>
-                  <span className="relative z-10 tracking-wide">Yes, I Will</span>
-                </button>
+          <div className="w-16 sm:w-24 h-px bg-gradient-to-r from-transparent via-rose-300 to-transparent mx-auto" />
 
-              
+          <p className="font-serif text-2xl sm:text-4xl md:text-5xl font-normal 
+                        text-transparent bg-clip-text 
+                        bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 leading-tight">
+            {name || "Darling"}, Will You Be My Valentine?
+          </p>
+        </div>
 
-                <button
-                  onMouseEnter={moveNoButton}
-                  onTouchStart={(e) => { e.preventDefault(); moveNoButton(); }}
-                  className=" px-12 py-5 rounded-full font-medium text-lg text-gray-600 bg-white/80 backdrop-blur-sm border-2 border-gray-200 transition-all duration-300 hover:border-gray-300 hover:bg-white/90"
-                  style={{
-                    transform: `translate(${noButtonPosition.x}px, ${noButtonPosition.y}px)`,
-                    transition: 'transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)',
-                  }}
-                >
-                  <span className="tracking-wide">Perhaps Not</span>
-                </button>
-              </div>
+        {/* Buttons */}
+        <div className="relative flex flex-col sm:flex-row items-center justify-center 
+                        gap-6 sm:gap-12 min-h-[120px] sm:min-h-[140px]">
 
-              {/* Subtle hint */}
-              {noAttempts > 0 && (
-                <div className="mt-12 text-center">
-                  <p className="font-serif text-lg text-rose-600/80 italic animate-fade-in">
-                    {noAttempts === 1 && "That button seems a bit shy..."}
-                    {noAttempts === 2 && "It appears to be playing hard to get"}
-                    {noAttempts === 3 && "Perhaps fate is trying to tell you something?"}
-                    {noAttempts >= 4 && "The universe knows what your heart truly wants..."}
-                  </p>
-                </div>
-              )}
+          {/* YES Button */}
+          <button
+            onClick={handleYes}
+            className="group relative 
+                       px-8 sm:px-12 md:px-16 
+                       py-3 sm:py-4 md:py-6 
+                       rounded-full font-medium 
+                       text-base sm:text-lg md:text-xl 
+                       text-white overflow-hidden 
+                       transition-all duration-500 
+                       hover:scale-105 hover:shadow-2xl hover:shadow-rose-500/50"
+          >
+            <div className="absolute inset-0 bg-gradient-to-r from-rose-500 via-pink-500 to-rose-500 bg-size-200 animate-gradient-shift" />
+            <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
+              <div className="absolute inset-0 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 blur-xl" />
             </div>
+            <span className="relative z-10 tracking-wide">
+              Yes, I Will
+            </span>
+          </button>
+
+          {/* NO Button */}
+          <button
+            onMouseEnter={moveNoButton}
+            onTouchStart={(e) => {
+              e.preventDefault();
+              moveNoButton();
+            }}
+            className="px-6 sm:px-10 md:px-12 
+                       py-2 sm:py-3 md:py-5 
+                       rounded-full font-medium 
+                       text-sm sm:text-base md:text-lg 
+                       text-gray-600 bg-white/80 
+                       backdrop-blur-sm border-2 border-gray-200 
+                       transition-all duration-300 
+                       hover:border-gray-300 hover:bg-white/90"
+            style={{
+              transform: `translate(${noButtonPosition.x}px, ${noButtonPosition.y}px)`,
+              transition:
+                "transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1)",
+            }}
+          >
+            <span className="tracking-wide">
+              Perhaps Not
+            </span>
+          </button>
+        </div>
+
+        {/* Hint */}
+        {noAttempts > 0 && (
+          <div className="mt-8 sm:mt-12 text-center">
+            <p className="font-serif text-sm sm:text-lg text-rose-600/80 italic animate-fade-in">
+              {noAttempts === 1 && "That button seems a bit shy..."}
+              {noAttempts === 2 && "It appears to be playing hard to get"}
+              {noAttempts === 3 && "Perhaps fate is trying to tell you something?"}
+              {noAttempts >= 4 &&
+                "The universe knows what your heart truly wants..."}
+            </p>
           </div>
-        ) : (
+        )}
+      </div>
+    </div>
+  ) 
+
+ : (
           // Success state
-          <div className="relative">
-            <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl rounded-[3rem] transform rotate-1 scale-105" />
-            <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-pink-100/40 backdrop-blur-2xl rounded-[3rem] transform -rotate-1" />
-            
-            <div className="relative bg-white/70 backdrop-blur-3xl rounded-[3rem] shadow-2xl border border-white/60 p-20 max-w-3xl text-center animate-scale-in">
-              {/* Celebration heart */}
-              <div className="mb-12 flex justify-center">
-                <svg width="150" height="150" viewBox="0 0 24 24" className="animate-heart-beat">
-                  <defs>
-                    <linearGradient id="celebrationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-                      <stop offset="0%" stopColor="#f43f5e" />
-                      <stop offset="50%" stopColor="#fb7185" />
-                      <stop offset="100%" stopColor="#f43f5e" />
-                    </linearGradient>
-                    <filter id="glow">
-                      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-                      <feMerge>
-                        <feMergeNode in="coloredBlur"/>
-                        <feMergeNode in="SourceGraphic"/>
-                      </feMerge>
-                    </filter>
-                  </defs>
-                  <path 
-                    d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
-                    fill="url(#celebrationGradient)"
-                    filter="url(#glow)"
-                  />
-                </svg>
-              </div>
+         <div className="relative w-full px-4 sm:px-6 flex justify-center">
+  <div className="absolute inset-0 bg-white/30 backdrop-blur-2xl rounded-[2rem] sm:rounded-[3rem] transform rotate-1 scale-105" />
+  <div className="absolute inset-0 bg-gradient-to-br from-white/40 to-pink-100/40 backdrop-blur-2xl rounded-[2rem] sm:rounded-[3rem] transform -rotate-1" />
+  
+  <div className="relative bg-white/70 backdrop-blur-3xl 
+                  rounded-[2rem] sm:rounded-[3rem] 
+                  shadow-2xl border border-white/60 
+                  p-6 sm:p-12 md:p-20 
+                  w-full max-w-md sm:max-w-2xl md:max-w-3xl 
+                  text-center animate-scale-in">
+    
+    {/* Celebration heart */}
+    <div className="mb-8 sm:mb-12 flex justify-center">
+      <svg
+        viewBox="0 0 24 24"
+        className="w-20 h-20 sm:w-32 sm:h-32 md:w-[150px] md:h-[150px] animate-heart-beat"
+      >
+        <defs>
+          <linearGradient id="celebrationGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stopColor="#f43f5e" />
+            <stop offset="50%" stopColor="#fb7185" />
+            <stop offset="100%" stopColor="#f43f5e" />
+          </linearGradient>
+          <filter id="glow">
+            <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+            <feMerge>
+              <feMergeNode in="coloredBlur"/>
+              <feMergeNode in="SourceGraphic"/>
+            </feMerge>
+          </filter>
+        </defs>
+        <path 
+          d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
+          fill="url(#celebrationGradient)"
+          filter="url(#glow)"
+        />
+      </svg>
+    </div>
 
-              <h2 className="font-serif text-7xl font-light text-transparent bg-clip-text bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 mb-8">
-                Love You!
-              </h2>
+    <h2 className="font-serif 
+                   text-4xl sm:text-6xl md:text-7xl 
+                   font-light text-transparent bg-clip-text 
+                   bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 
+                   mb-6 sm:mb-8">
+      Love You!
+    </h2>
 
-              <div className="w-32 h-px bg-gradient-to-r from-transparent via-rose-400 to-transparent mx-auto mb-8" />
+    <div className="w-20 sm:w-28 md:w-32 h-px 
+                    bg-gradient-to-r from-transparent via-rose-400 to-transparent 
+                    mx-auto mb-6 sm:mb-8" />
 
-              <p className="font-serif text-3xl text-gray-700 leading-relaxed mb-6">
-                My heart is overflowing with joy
-              </p>
+    <p className="font-serif 
+                  text-lg sm:text-2xl md:text-3xl 
+                  text-gray-700 leading-relaxed mb-4 sm:mb-6">
+      My heart is overflowing with joy
+    </p>
 
-              <p className="font-serif text-xl text-gray-600 leading-relaxed max-w-xl mx-auto">
-                This Valentine's Day will be the beginning of something truly beautiful. 
-                I promise to cherish every moment we share together.
-              </p>
+    <p className="font-serif 
+                  text-base sm:text-lg md:text-xl 
+                  text-gray-600 leading-relaxed 
+                  max-w-sm sm:max-w-lg md:max-w-xl 
+                  mx-auto">
+      This Valentine's Day will be the beginning of something truly beautiful. 
+      I promise to cherish every moment we share together.
+    </p>
 
-              <div className="mt-12 flex justify-center gap-4">
-                {[...Array(5)].map((_, i) => (
-                  <svg 
-                    key={i} 
-                    width="30" 
-                    height="30" 
-                    viewBox="0 0 24 24"
-                    className="animate-bounce-stagger"
-                    style={{ animationDelay: `${i * 0.1}s` }}
-                  >
-                    <path 
-                      d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
-                      fill="#f43f5e"
-                      opacity="0.7"
-                    />
-                  </svg>
-                ))}
-              </div>
-            </div>
-          </div>
+    <div className="mt-8 sm:mt-12 flex justify-center gap-3 sm:gap-4 flex-wrap">
+      {[...Array(5)].map((_, i) => (
+        <svg 
+          key={i}
+          viewBox="0 0 24 24"
+          className="w-5 h-5 sm:w-6 sm:h-6 md:w-[30px] md:h-[30px] animate-bounce-stagger"
+          style={{ animationDelay: `${i * 0.1}s` }}
+        >
+          <path 
+            d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" 
+            fill="#f43f5e"
+            opacity="0.7"
+          />
+        </svg>
+      ))}
+    </div>
+  </div>
+</div>
+
         )}
       </div>
 
